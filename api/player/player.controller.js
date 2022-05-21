@@ -9,7 +9,7 @@ async function createPlayerHandler(req, res) {
     //     return res.status(422).json({ response: 'Missing values in the body' });
     //   }
       const player = await createPlayer(req.body);
-    
+    console.log('pla', player)
       return res.status(201).json(player);
     } catch (error) {
       return res.status(500).json({ error: error.message });
