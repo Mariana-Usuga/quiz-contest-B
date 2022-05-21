@@ -21,11 +21,9 @@ app.listen(PORT, () => {
     console.log('MongoDB Connected');
     console.log(`Server running 🤖 at http://localhost:8080/`)
   } catch (error) {
-    console.log(error);
-    // process.exit(1);
+    console.error(error);
   }
 
-  // Routes
   routes(app);
 
   console.log(`Server running 🤖 at http://localhost:${PORT}/`);
