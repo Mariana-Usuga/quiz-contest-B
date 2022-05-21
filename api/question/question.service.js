@@ -3,7 +3,7 @@ const Question = require('./question.model')
 async function getAllQuestions() {
     try {
       const questions = await Question.find();
-    //   console.log('get', questions)
+      // console.log('get', questions)
       return questions;
     } catch (error) {
       console.log('error', error);

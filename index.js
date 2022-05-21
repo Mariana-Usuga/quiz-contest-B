@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const Question = require('./api/question/question.model')
+// const Question = require('./api/question/question.model')
+const expressConfig = require('./config/express');
 const routes = require('./routes')
 
 const URI = process.env.DB_URI;
 const PORT = 8080
 
 const app = express();
+expressConfig(app);
 
 app.listen(PORT, () => {
   // connect to database
@@ -29,34 +31,3 @@ app.listen(PORT, () => {
   console.log(`Server running 🤖 at http://localhost:${PORT}/`);
 });
 
-  // async function getAllQuestions() {
-  //   try {
-  //     const courses = await Question.find();
-  //     // console.log('get', courses)
-  //     return courses;
-  //   } catch (error) {
-  //     console.log('error', error);
-  //     throw error;
-  //   }
-  // }
-  
-  // async function createQuestion() {
-  //   const question = {
-  //     level: 5,
-  //     question: "¿Cómo se llama el componente mínimo que forma a los seres vivos?",
-  //     category: "science",
-  //     answer: "Célula",
-  //     choices: ["Tejido", "Particula", "Célula", "Calcio"]
-  //   }
-  //   try {
-  //     const newCourse = new Question(question);
-  //     const savedCourse = await newCourse.save();
-  //     console.log('ques new', savedCourse)
-  //     return savedCourse;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // }
-
-  // // createQuestion();
-  // getAllQuestions();
