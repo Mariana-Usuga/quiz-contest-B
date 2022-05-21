@@ -27,6 +27,6 @@ app.listen(8080, () => {
 
   routes(app);
 
-  console.log(`Server running 🤖 at http://localhost:${PORT}/`);
+  console.log(`Server running 🤖 at http://localhost:${8080}/`);
 });
 
